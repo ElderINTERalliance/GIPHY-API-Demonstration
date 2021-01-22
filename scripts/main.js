@@ -11,7 +11,14 @@ document.getElementById("recycleBin").addEventListener('click', () => {
     audio.play();
 })
 
-// Put your code here
+document.getElementById("ie").addEventListener('click', () => {
+    fetch(`https://api.giphy.com/v1/gifs/random?api_key=${apiKey}&tag=cat&rating=g`)
+        .then(res => res.json())
+        .then(src => {
+            appendGif(src.data.image_url, src.data.image_width, src.data.image_height);
+        })
+        .catch(err => console.error(err));
+})
 
 function appendGif(src, width, height) {
     var img = new Image();
