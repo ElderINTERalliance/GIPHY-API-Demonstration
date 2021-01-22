@@ -15,8 +15,9 @@ document.getElementById("ie").addEventListener('click', () => {
     fetch(`https://api.giphy.com/v1/gifs/random?api_key=${apiKey}&tag=cat&rating=g`)
         .then(res => res.json())
         .then(src => {
-            appendImage(src.data.image_url, src.data.image_width, src.data.image_height);
+            appendGif(src.data.image_url, src.data.image_width, src.data.image_height);
         })
+        .catch(err => console.error(err));
 })
 
 function appendGif(src, width, height) {
