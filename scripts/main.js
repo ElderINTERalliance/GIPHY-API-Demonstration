@@ -25,11 +25,13 @@ function appendGif(src, width, height) {
 
 function appendError(src) {
     var img = new Image();
+    img.addEventListener('load', () => {
+        var pos = getRandomPosition(img.width, img.height);
+        img.style.left = pos[0] + 'px';
+        img.style.top = pos[1] + 'px';
+    })
     img.src = src;
     img.classList.add('error');
-    var pos = getRandomPosition(img.width, img.height);
-    img.style.left = pos[0] + 'px';
-    img.style.top = pos[1] + 'px';
     screen.appendChild(img);
 }
 
