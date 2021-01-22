@@ -3,5 +3,5 @@
 
 
 ## Links
-[GIPHY Developer](https://developers.giphy.com)
+[GIPHY Developer](https://developers.giphy.com)<br/>
 [API Explorer](https://developers.giphy.com/explorer)
