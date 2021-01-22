@@ -1,5 +1,5 @@
 
-const apiKey = process.env.GIPHY_API_KEY || '';
+const apiKey = prompt("Please enter your GIPHY API key.");
 
 const audio = new Audio('/sounds/xpError.mp3')
 
