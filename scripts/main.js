@@ -1,12 +1,12 @@
 
 const apiKey = '';
 
-const audio = new Audio('/sounds/xpError.m4a')
+const audio = new Audio('/sounds/xpError.mp3')
 
 var screen = document.getElementById("screen");
 
 document.getElementById("recycleBin").addEventListener('click', () => {
-    var randomNumber = Math.floor(Math.random() * 5 + 1);
+    var randomNumber = Math.floor(Math.random() * 12 + 1);
 
     var img = new Image();
     img.src = `/images/errors/0${randomNumber}.png`;
@@ -19,7 +19,7 @@ document.getElementById("recycleBin").addEventListener('click', () => {
 })
 
 document.getElementById("ie").addEventListener('click', () => {
-        getImg = fetch(`https://api.giphy.com/v1/gifs/random?api_key=${apiKey}&tag=cat&rating=g`)
+    getImg = fetch(`https://api.giphy.com/v1/gifs/random?api_key=${apiKey}&tag=cat&rating=g`)
         .then(res => res.json())
         .then(src => {
             var imgSrc = src.data.image_url;
@@ -31,8 +31,7 @@ document.getElementById("ie").addEventListener('click', () => {
             img.style.left = pos[0] + 'px';
             img.style.top = pos[1] + 'px';
             screen.appendChild(img);
-        })    
-
+        })
 })
 
 function getRandomPosition(width, height) {
